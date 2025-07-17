@@ -1,0 +1,11 @@
+AI DevOps is a relatively new field that combines the principles of AI and DevOps to improve the development, deployment, and maintenance of AI models. Some recent developments in AI DevOps include:
+
+Automated machine learning (AutoML): This involves using algorithms and tools to automate the process of building, tuning, and deploying machine learning models. This can help speed up the development process and make it more accessible to non-experts.
+
+Model versioning and tracking: As AI models are updated and improved over time, it's important to keep track of their versions and changes. This can be done using tools like MLflow, which provide a way to track and compare different versions of models and their performance.
+
+Model monitoring and drift detection: Once models are deployed, it's important to monitor their performance and detect any issues, such as data drift. This can be done using tools like Seldon and Alibi, which provide monitoring and drift detection capabilities.
+
+Explainable AI: There's also an increasing focus on making AI models more interpretable and explainable, to help people understand how they're making decisions. This can be done using techniques like LIME and SHAP to explain the predictions of black-box models.
+
+Overall, AI DevOps is an area of active research and development and many new tools, techniques and methodologies are coming out frequently.

@@ -1,0 +1,13 @@
+what is shap in ai devops
+SHAP (SHapley Additive exPlanations) is another technique for explaining the predictions of black-box models. It is based on the concept of Shapley values from cooperative game theory, which provide a way to fairly distribute a value among a group of individuals.
+
+In the context of machine learning, the goal of SHAP is to attribute a predicted value to each feature of the input data, so that we can understand which features were most important in the model's decision. It does this by approximating the expected value of the prediction for each feature, taking into account all possible combinations of the other features.
+
+SHAP can be applied to any type of input data and to any type of model, including deep neural networks, gradient boosting, and random forests. It also can be used to identify feature interactions and dependencies.
+
+One of the main advantages of SHAP is that it can provide feature importance values that are consistent with the model's predictions, regardless of the specific instance being considered. Unlike LIME, it can provide global explanation, not just local.
+
+In AI DevOps, SHAP can be used to improve the interpretability and explainability of models, which can help with debugging, monitoring, and maintaining the models. It can also be used to identify bias in models and to ensure that they are making predictions in a fair and unbiased manner.
+
+
+

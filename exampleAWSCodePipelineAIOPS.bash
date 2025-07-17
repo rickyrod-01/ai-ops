@@ -1,0 +1,105 @@
+# can you generate example code using AWS CodePipeline via the cli for AI OPS
+# Sure! Here is an example of how you can create an AWS CodePipeline using the AWS CLI:
+
+# First, you'll need to install the AWS CLI and configure it with your AWS access keys. You can do this by running pip install awscli and then running aws configure.
+
+# Next, you can create a CodePipeline using the create-pipeline command. Here is an example of how to do this:
+
+aws codepipeline create-pipeline \
+  --cli-input-json file://pipeline.json
+
+# The pipeline.json file should contain a JSON object with the following structure:
+# This pipeline will Poll a GitHub repository for changes on the master
+
+{
+  "pipeline": {
+    "name": "MyPipeline",
+    "roleArn": "arn:aws:iam::123456789012:role/CodePipelineServiceRole",
+    "artifactStore": {
+      "type": "S3",
+      "location": "my-s3-bucket"
+    },
+    "stages": [
+      {
+        "name": "Source",
+        "actions": [
+          {
+            "name": "Source",
+            "actionTypeId": {
+              "category": "Source",
+              "owner": "ThirdParty",
+              "provider": "GitHub",
+              "version": "1"
+            },
+            "outputArtifacts": [
+              {
+                "name": "MyApp"
+              }
+            ],
+            "configuration": {
+              "Owner": "my-github-username",
+              "Repo": "my-repository",
+              "Branch": "master"
+            },
+            "runOrder": 1
+          }
+        ]
+      },
+      {
+        "name": "Build",
+        "actions": [
+          {
+            "name": "Build",
+            "actionTypeId": {
+              "category": "Build",
+              "owner": "AWS",
+              "provider": "CodeBuild",
+              "version": "1"
+            },
+            "inputArtifacts": [
+              {
+                "name": "MyApp"
+              }
+            ],
+            "outputArtifacts": [
+              {
+                "name": "MyBuild"
+              }
+            ],
+            "configuration": {
+              "ProjectName": "MyCodeBuildProject"
+            },
+            "runOrder": 1
+          }
+        ]
+      },
+      {
+        "name": "Deploy",
+        "actions": [
+          {
+            "name": "Deploy",
+            "actionTypeId": {
+              "category": "Deploy",
+              "owner": "AWS",
+              "provider": "CodeDeploy",
+              "version": "1"
+            },
+            "inputArtifacts": [
+              {
+                "name": "MyBuild"
+              }
+            ],
+            "configuration": {
+              "ApplicationName": "MyCodeDeployApplication",
+              "DeploymentGroupName": "MyCodeDeployDeploymentGroup"
+            },
+            "runOrder": 1
+          }
+        ]
+      }
+    ]
+  }
+}
+
+
+# This pipeline will Poll a GitHub repository for changes on the master

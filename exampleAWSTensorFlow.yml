@@ -1,0 +1,53 @@
+# First, create a SageMaker training job using the create-training-job command
+aws sagemaker create-training-job \
+  --region us-east-1 \
+  --training-job-name my-tensorflow-training-job \
+  --algorithm-specification '{
+    "TrainingImage": "763104351884.dkr.ecr.us-east-1.amazonaws.com/tensorflow:1.14-cpu-py36-ubuntu18.04",
+    "TrainingInputMode": "File"
+  }' \
+  --role-arn arn:aws:iam::123456789012:role/service-role/AmazonSageMaker-ExecutionRole-20221231T121212 \
+  --input-data-config '[{
+    "ChannelName": "train",
+    "DataSource": {
+      "S3DataSource": {
+        "S3DataType": "S3Prefix",
+        "S3Uri": "s3://my-bucket/path/to/train/data",
+        "S3DataDistributionType": "FullyReplicated"
+      }
+    },
+    "ContentType": "tfrecord",
+    "CompressionType": "None"
+  }]' \
+  --output-data-config '{
+    "S3OutputPath": "s3://my-bucket/path/to/output"
+  }' \
+  --resource-config '{
+    "InstanceType": "ml.p2.xlarge",
+    "InstanceCount": 1,
+    "VolumeSizeInGB": 50
+  }' \
+  --stopping-condition '{
+    "MaxRuntimeInSeconds": 86400
+  }'
+
+# Next, wait for the training job to complete using the wait command
+aws sagemaker wait training-job-completed \
+  --region us-east-1 \
+  --training-job-name my-tensorflow-training-job
+
+# Once the training job is complete, you can use the create-model command to create a SageMaker model
+aws sagemaker create-model \
+  --region us-east-1 \
+  --model-name my-tensorflow-model \
+  --primary-container '{
+    "Image": "763104351884.dkr.ecr.us-east-1.amazonaws.com/tensorflow-inference:1.14-cpu-py36-ubuntu18.04",
+    "ModelDataUrl": "s3://my-bucket/path/to/output/model.tar.gz"
+  }' \
+  --execution-role-arn arn:aws:iam::123456789012:role/service-role/AmazonSageMaker-ExecutionRole-20221231T121212
+
+# Finally, you can use the create-endpoint command to create a SageMaker endpoint for hosting the model
+aws sagemaker create-endpoint \
+  --region us-east-1 \
+  --endpoint-name my-tensorflow-endpoint \
+  --endpoint-

@@ -1,0 +1,49 @@
+
+-Amazon SageMaker
+
+AWS DeepLens - AWS DeepLens is the world’s first deep-learning enabled video camera
+ for developers of all skill levels to grow their machine learning skills through 
+hands-on computer vision tutorials, example code, and pre-built models.
+https://aws.amazon.com/deeplens/faqs/
+
+AWS DeepRacer - AWS DeepRacer is an integrated learning system for users of all levels to learn and explore 
+reinforcement learning and to experiment and build autonomous driving applications.
+
+Amazon CodeGuru - Amazon CodeGuru Profiler collects runtime performance data from your live applications, and 
+provides recommendations that can help you fine-tune your application performance
+
+Amazon Comprehend - Amazon Comprehend is a natural language processing (NLP) service that uses machine learning to 
+find insights and relationships in text.
+
+Amazon DevOps Guru - Enable DevOps Guru to analyze operational data of your AWS resources. Improve application 
+availability with ML-powered insights and recommendations to facilitate faster remediation of operational issues and
+reduce expensive downtime.
+
+Amazon Elastic Inference - Amazon Elastic Inference allows you to attach low-cost GPU-powered acceleration to Amazon
+ EC2 and Sagemaker instances or Amazon ECS tasks, to reduce the cost of running deep learning inference by up to 75%.
+ Amazon Elastic Inference supports TensorFlow, Apache MXNet, PyTorch and ONNX models.
+
+Amazon Forecast - Amazon Forecast is a time-series forecasting service based on machine learning (ML) and built for 
+business metrics analysis.
+
+Amazon Kendra - Amazon Kendra is an intelligent enterprise search service that allows users to search across 
+different content repositories with built-in connectors.
+
+-Amazon Lex
+
+Amazon Personalize - Amazon Personalize allows developers to quickly build and deploy curated recommendations and 
+intelligent user segmentation at scale using machine learning (ML). Because Amazon Personalize can be tailored to
+ your individual needs, you can deliver the right customer experience at the right time and in the right place.
+
+-Amazon Polly
+
+-Amazon Rekognition
+
+Amazon Textract - Amazon Textract is a machine learning (ML) service that automatically extracts text, handwriting,
+ and data from scanned documents
+
+Amazon Transcribe - Amazon Transcribe provides high-quality and affordable speech-to-text transcription for a wide range of use cases.
+
+-Amazon Translate
+
+-TensorFlow on AWS

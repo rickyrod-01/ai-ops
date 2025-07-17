@@ -1,0 +1,46 @@
+# Here is an example of how you might use the AWS CLI to train and deploy a machine learning model using Amazon SageMaker:
+# First, create a SageMaker notebook instance and start it:
+aws sagemaker create-notebook-instance \
+  --notebook-instance-name my-notebook-instance \
+  --instance-type ml.t2.medium
+
+aws sagemaker start-notebook-instance \
+  --notebook-instance-name my-notebook-instance
+
+#Next, create a SageMaker training job to train a model based on your data:
+
+aws sagemaker create-training-job \
+  --training-job-name my-training-job \
+  --algorithm-specification TrainingImage=<training-image-uri>,TrainingInputMode=File \
+  --role-arn <role-arn> \
+  --input-data-config '{
+    "ChannelName": "train",
+    "DataSource": {
+      "S3DataSource": {
+        "S3DataType": "S3Prefix",
+        "S3Uri": "<s3-uri>",
+        "S3DataDistributionType": "FullyReplicated"
+      }
+    },
+    "ContentType": "text/csv",
+    "CompressionType": "None"
+  }' \
+  --output-data-config '{
+    "S3OutputPath": "<s3-output-path>"
+  }' \
+  --resource-config '{
+    "InstanceType": "ml.m5.large",
+    "InstanceCount": 1,
+    "VolumeSizeInGB": 50
+  }'
+# Once the training job is complete, create a SageMaker model based on the trained model:
+
+aws sagemaker create-model \
+  --model-name my-model \
+  --primary-container '{
+    "Image": "<training-image-uri>",
+    "ModelDataUrl": "<s3-model-artifact-uri>"
+  }' \
+  --execution-role-arn <role-arn>
+
+

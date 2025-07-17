@@ -1,0 +1,12 @@
+A Common Data Fabric Ingest Engineer is responsible for the design, development, and maintenance of data ingestion pipelines for a Common Data Fabric (CDF). The CDF is a data management platform that enables organizations to consolidate, govern, and share data across different systems, applications, and teams. The Ingest Engineer plays a critical role in ensuring that data is ingested into the CDF in a timely, accurate, and consistent manner.
+
+Some specific responsibilities of a Common Data Fabric Ingest Engineer may include:
+
+Designing and implementing data ingestion pipelines to extract data from various sources, such as databases, files, APIs, and IoT devices
+Transforming and cleaning data to ensure consistency and compliance with data governance policies
+Validating and testing data ingestion pipelines to ensure data quality and integrity
+Monitoring and troubleshooting data ingestion issues, and working with other teams to resolve them
+Documenting data ingestion processes and procedures
+Collaborating with data architects, data engineers, data scientists, and other stakeholders to understand data requirements and design data ingestion solutions that meet their needs
+Continuously improving data ingestion processes and identifying new opportunities for data integration
+The ideal candidate for this role should have experience in data engineering, data integration, and data warehousing, as well as knowledge of programming languages such as Python, Java, and SQL. They should also have experience with big data technologies such as Apache Kafka, Apache NiFi, and Apache Spark, and experience with data governance, data quality, and data security best practices.

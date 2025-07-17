@@ -1,0 +1,26 @@
+Here is a sample bash script that creates four non-person entity certificates for four servers on different AWS Linux instances using one private key:
+
+#!/bin/bash
+
+# Generate private key
+openssl genpkey -algorithm RSA -out private_key.pem
+
+# Create certificate signing request for server 1
+openssl req -new -key private_key.pem -out server1.csr -subj "/C=US/ST=California/L=San Francisco/O=Server 1/CN=server1.example.com"
+
+# Create certificate signing request for server 2
+openssl req -new -key private_key.pem -out server2.csr -subj "/C=US/ST=California/L=San Francisco/O=Server 2/CN=server2.example.com"
+
+# Create certificate signing request for server 3
+openssl req -new -key private_key.pem -out server3.csr -subj "/C=US/ST=California/L=San Francisco/O=Server 3/CN=server3.example.com"
+
+# Create certificate signing request for server 4
+openssl req -new -key private_key.pem -out server4.csr -subj "/C=US/ST=California/L=San Francisco/O=Server 4/CN=server4.example.com"
+
+# Sign all CSRs with the private key
+openssl x509 -req -days 365 -in server1.csr -signkey private_key.pem -out server1.crt
+openssl x509 -req -days 365 -in server2.csr -signkey private_key.pem -out server2.crt
+openssl x509 -req -days 365 -in server3.csr -signkey private_key.pem -out server3.crt
+openssl x509 -req -days 365 -in server4.csr -signkey private_key.pem -out server4.crt
+
+This script uses the OpenSSL command-line tool to generate a private key and create certificate signing requests (CSRs) for each server. It then signs each CSR with the private key, creating a certificate for each server. It is important to note that these are self-signed certificates and not verified by any CA, so they will not be trusted by default.
