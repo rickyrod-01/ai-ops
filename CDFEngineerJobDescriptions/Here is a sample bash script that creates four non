@@ -1,4 +1,4 @@
-Here is a sample bash script that creates four non-person entity certificates for four servers on different AWS Linux instances using one private key:
+#Here is a sample bash script that creates four non-person entity certificates for four servers on different AWS Linux instances using one private key:
 
 #!/bin/bash
 
