@@ -8,7 +8,7 @@ Model monitoring and drift detection: Once models are deployed, it's important t
 
 Explainable AI: There's also an increasing focus on making AI models more interpretable and explainable, to help people understand how they're making decisions. This can be done using techniques like LIME and SHAP to explain the predictions of black-box models.
 
-Overall, AI DevOps is an area of active research and development and many new tools,
+Overall, AI DevOps is an area of active research and development and many new tools are evolving and being created.
 
 Amazon SageMaker: A fully managed service that enables you to build, train, and deploy ML models quickly and easily.
 
@@ -47,12 +47,8 @@ AWS CodeDeploy: A fully managed deployment service that automates software deplo
 
 AWS X-Ray: A service that helps you analyze and debug production applications.
 
-These are just a few examples of the AI and ML services that AWS offers that can be used in the context of DevOps. You can find more information about these and other services on the AWS website.
+These are just a few examples of the AI and ML services that AWS offers that can be used in the context of DevOps. You can find more information about these and other services on AWS.
 
-can you generate example code using AWS CodePipeline via the cli for AI OPS
-can you generate example code using AWS Codebuild via the cli for AI OPS
-can you generate example code using AWS CodeStar via the cli for AI OPS
-can you generate example code using AWS CodeCommit via the cli for AI OPS
-can you generate example code using AWS CodeDeploy via the cli for AI OPS
-can you generate example code using AWS X-Ray via the cli for AI OPS
+Code using AWS CodePipeline, AWS Codebuild, AWS CodeStar, AWS CodeCommit, AWS CodeDeploy,
+and AWS X-Ray, all via the cli for AI OPS are in this repo.
 
